@@ -1,0 +1,377 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Rubik", sans-serif;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  font-size: 1.6rem;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+}
+
+body::before {
+  top: 0;
+  left: 0;
+  width: 28%;
+  height: 85vh;
+  background-image: linear-gradient(
+    180deg,
+    hsl(293, 100%, 63%),
+    hsl(264, 100%, 61%)
+  );
+  border-bottom-right-radius: 30rem;
+  border-bottom-left-radius: 30rem;
+}
+
+body::after {
+  bottom: 0;
+  right: 0;
+  width: 25%;
+  height: 85vh;
+  background-color: hsl(270, 20%, 96%);
+  border-top-left-radius: 38rem;
+}
+
+main {
+  gap: 20rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/** Chat illustration styles*/
+.chat-illustration {
+  width: 30rem;
+  overflow: hidden;
+  border-radius: 2rem;
+  padding: 0 0 1.5rem 0;
+  outline: 1.2rem solid white;
+  background-color: hsl(270, 20%, 96%);
+  box-shadow: 5px 9px 35px -3px rgba(0, 0, 0, 0.39),
+    -7px -10px 35px -3px rgba(0, 0, 0, 0.39);
+}
+
+.chat-illustration__header {
+  padding: 4rem 2rem 1.5rem 1.5rem;
+  background-image: linear-gradient(
+    -90deg,
+    hsl(293, 100%, 63%),
+    hsl(264, 100%, 61%)
+  );
+  gap: 1rem;
+  color: #fff;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chat-illustration__header::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -13%;
+  width: 18rem;
+  height: 40%;
+  background-color: #ffff;
+  border-radius: 0 0 1.9rem 1.9rem;
+  transform: translateX(-50%);
+}
+
+.chat-illustration__header-avatar {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+}
+
+.chat-illustration__header-left-section {
+  gap: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.chat-illustration__header-left-section p {
+  line-height: 1.5;
+}
+
+.chat-illustration__header-right-section span {
+  display: block;
+  width: 0.3rem;
+  height: 0.3rem;
+  border-radius: 50%;
+  background: #fff;
+  margin: 0.3rem 0 0 0;
+}
+
+.chat-illustration__left-chat {
+  display: block;
+  color: hsl(276, 55%, 52%);
+  background-color: hsla(276, 100%, 81%, 0.2);
+  margin: 1rem 1rem 0;
+  border-radius: 1rem;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  max-width: 60%;
+  line-height: 1.5;
+  animation: animate-in-from-left 0.8s ease-in forwards;
+}
+
+.chat-illustration__left-chat-cta {
+  padding: 1rem 2rem 1rem 1rem;
+  width: 75%;
+  margin: 1rem 1rem 0;
+  background-image: linear-gradient(
+    90deg,
+    hsl(293, 100%, 63%),
+    hsl(264, 100%, 61%)
+  );
+  border-radius: 12px 12px 12px 3px;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  animation: animate-in-from-left 0.8s ease-in forwards;
+}
+
+.radio {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  border: 1px solid hsl(289, 100%, 72%);
+}
+
+.service-description {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+}
+
+.service-price {
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  display: inline-block;
+  margin-left: auto;
+}
+
+.chat-illustration__right-chat {
+  display: block;
+  color: hsl(271, 15%, 43%);
+  background-color: #fff;
+  margin: 1rem 1rem 0 auto;
+  border-radius: 1rem;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  max-width: 60%;
+  line-height: 1.5;
+  box-shadow: 4px 3px 5px -2px rgba(0, 0, 0, 0.25);
+  animation: animate-in-from-right 0.8s ease-in forwards;
+}
+
+.chat-illustration__right-chat-media {
+  display: block;
+  margin: 2rem 1rem 0 auto;
+  text-align: end;
+  animation: animate-in-from-right 0.8s ease-in forwards;
+}
+
+.chat-illustration__right-chat-media img {
+  border-radius: 1rem;
+}
+
+.chat-illustration__chat-box {
+  width: 92%;
+  border-radius: 999px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem 1rem 0;
+  padding: 1rem 1rem 1rem 2rem;
+  font-size: 1.2rem;
+  color: hsl(270, 7%, 64%);
+}
+
+.chat-illustration__chat-box .enter {
+  font-weight: 700;
+  color: #fff;
+  font-size: 1.5rem;
+  height: 3rem;
+  align-items: center;
+  width: 3rem;
+  display: flex;
+  border-radius: 50%;
+  background-color: hsl(271, 36%, 24%);
+  justify-content: center;
+}
+
+.back-icon,
+.chat-illustration__header-user-name {
+  font-weight: 700;
+}
+
+.chat-illustration__header-user-name {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.4rem;
+}
+
+.chat-illustration__header-user-status {
+  color: hsl(276, 100%, 81%);
+  font-size: 1rem;
+}
+
+/** product styles*/
+.product {
+  width: 50rem;
+}
+
+.product__title {
+  font-size: 4rem;
+  margin: 0 0 3rem;
+  color: hsl(271, 36%, 24%);
+}
+
+.product__description {
+  line-height: 2;
+  color: hsl(270, 7%, 64%);
+}
+
+/** Animation delays*/
+.delay-1 {
+  opacity: 0;
+  animation-delay: 0s;
+}
+.delay-2 {
+  opacity: 0;
+  animation-delay: 1s;
+}
+.delay-3 {
+  opacity: 0;
+  animation-delay: 2s;
+}
+.delay-4 {
+  opacity: 0;
+  animation-delay: 3s;
+}
+.delay-5 {
+  opacity: 0;
+  animation-delay: 4s;
+}
+.delay-6 {
+  opacity: 0;
+  animation-delay: 5s;
+}
+.delay-7 {
+  opacity: 0;
+  animation-delay: 6s;
+}
+.delay-8 {
+  opacity: 0;
+  animation-delay: 7s;
+}
+
+@media (max-width: 1200px) {
+  body::before,
+  body::after {
+    width: 40%;
+  }
+
+  main {
+    gap: 10rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  html {
+    font-size: 60%;
+  }
+
+  main {
+    gap: 7rem;
+  }
+}
+
+@media (max-width: 900px) {
+  body::before {
+    border-bottom-left-radius: 0;
+    height: 60vh;
+  }
+
+  body::after {
+    height: 60%;
+  }
+
+  main {
+    flex-direction: column;
+    padding: 4rem 2rem;
+  }
+
+  .chat-illustration {
+    max-width: 30rem;
+  }
+
+  .product {
+    text-align: center;
+    max-width: 50rem;
+    width: auto;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+
+  body::before,
+  body::after {
+    width: 50%;
+  }
+}
+
+@media (max-width: 300px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@keyframes animate-in-from-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes animate-in-from-right {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
